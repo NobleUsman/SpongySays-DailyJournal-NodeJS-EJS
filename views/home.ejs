@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head -->
+    <%- include("partials/head") -%>
+
+<body>
+    <!-- header -->
+    <%- include("partials/header") -%>
+
+    <div class="container">
+        <h1>Home</h1>
+        <p> <%= homeMarker %> </p>
+
+        <% homePosts.forEach(function(post) { %>
+            <h1> <%= post.title %> </h1>
+            <p> 
+                <%= post.content.substring(0, 100) + " ..." %> 
+                <a style="text-decoration: none;" href="/posts/<%= post.title %>">Read More</a>
+            </p>
+        <% }) %>
+        
+
+    </div>
+
+
+    <!-- footer -->
+    <%- include("partials/footer") -%>
+</body>
+</html>
